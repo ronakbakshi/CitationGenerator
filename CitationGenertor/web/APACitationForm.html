@@ -1,107 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+
+        <title>Citation Generator</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="APACitationForm.js" type="text/javascript"></script>
+        <style>
+            .container{
+                color: #31578F
+            }
+            .navbar-inverse {
+                background-color: #31578F;
+            }
+            .navbar-inverse .navbar-nav>li>a {
+                color: #fff;
+            }
+
+        </style>
     </head>
     <body>
-
         <div class="container">
-            <h2>Horizontal form</h2>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="fName">Name of the Author:</label>
-                    <div class="col-sm-10" >
-                        <input class="form-control" id="fName" name="fname" placeholder="First name" type="text">
-                        <input class="form-control" id="mName" name="mname" placeholder="Middle name" type="text">
-                        <input class="form-control" id="lName" name="lname" placeholder="Last name" type="text">                        
+            <h2>Citation Generator Form</h2>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="alert alert-info" id="alertUserSignUp" style="display:none">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="pwd">Password:</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Remember me</label>
+            </div>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">APA</a></li>
+                <li><a data-toggle="tab" href="#menu1">AMA</a></li>
+            </ul>
+            <br>
+            <br>
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="alert alert-danger" role="alert" style="display: none" id="messageText"></div>
+                    <form class="form-horizontal" role="form" action="action_page.php">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="fName">First name:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="fName" placeholder="Enter first name">
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="mName">Middle name:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="mName" placeholder="Enter middle name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="lName">Last name:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="lName" placeholder="Enter last name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="yop">Year of publication:</label>
+                            <div class="col-sm-4">
+                                <input type="number" class="form-control" id="yop">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="title">Title of article:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="title" placeholder="Enter title of article">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="journalTitle">Journal title:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="journalTitle" placeholder="Enter Journal title">
+                            </div>
+                        </div>
 
 
-        <div class="container">
-            <h2>APA Citation Form</h2>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-sm-8 form-group">
-                        <label class="control-label col-sm-2" for="fName">Name of the Author</label>
-                        <div>
-                            <input id="fName" name="fname" placeholder="First name" type="text">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="volume">Volume number:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="volume" placeholder="Enter volume number">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-2 form-group">
-                        <input id="mName" name="mname" placeholder="Middle name" type="text">
-                    </div>
-                    <div class="col-sm-4 form-group">
-                        <input id="lName" name="lname" placeholder="Last name" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="yearOfPublication" name="yearofpublication" placeholder="Year of Publication" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="title" name="titleofarticle" placeholder="Title of article" type="text" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="journalTitle" name="journaltitle" placeholder="Journal Title" type="text" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="volume" name="volumenumber" placeholder="Volume number" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="issue" name="issueNumber" placeholder="Issue number" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="pageNumber" name="pagenumber" placeholder="Page Numbers" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="DOI" name="doi" placeholder="doi" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 form-group">
-                        <input class="form-control" id="permalink" name="permaLink" placeholder="permalink" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <button class="btn pull-right" type="submit">Submit</button>
-                    </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="issue">Issue number:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="issue" placeholder="Enter issue number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="page">Page number:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="page" placeholder="Enter page number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="choice">Choose one</label>
+                            <div class="col-sm-4">
+                                <label class="radio-inline active">    
+                                    <input type="radio" id="male" name="choice" value="doi" checked="">doi</label>
+                                <label class="radio-inline">
+                                    <input type="radio" id="female" value="permalink" name="choice">permalink</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">doi:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="email" placeholder="Enter doi">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="pwd">Permalink:</label>
+                            <div class="col-sm-4">          
+                                <input type="text" class="form-control" id="pwd" placeholder="Enter permalink">
+                            </div>
+                        </div>
+
+                        <div class="form-group">        
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" id="submitBTN" class="btn btn-default">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="citation">Cited text:</label>
+                            <div class="col-sm-4">          
+                                <textarea class="form-control" rows="5" id="citation"></textarea>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
