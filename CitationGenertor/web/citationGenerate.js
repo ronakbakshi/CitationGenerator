@@ -5,9 +5,7 @@
  */
 
      function citationData() {
-          /*
-           * Author field 
-           */
+     
            var firstName = document.getElementById("firstName").value;
            var middlename = document.getElementById("middleName").value;
            var lastName = document.getElementById("lastName").value;
