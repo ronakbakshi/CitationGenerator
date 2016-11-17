@@ -38,7 +38,18 @@
             </ul>
             <br>
             <br>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="alert alert-info" id="alertUserSignUp" style="display:none">
 
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="alert alert-danger" id="mandatoryFields">
+                        <strong>All the input fields are mandatory</strong>
+                    </div>
+                </div>
+            </div>
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
                     <div class="alert alert-danger" role="alert" style="display: none" id="messageText"></div>
@@ -47,42 +58,43 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="fName">First name:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="fName" placeholder="Enter first name">
+                                <input type="text" class="form-control" id="fName" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="mName">Middle name:</label>
+                            <label class="control-label col-sm-2" for="mName" data-toggle="tooltip" title = "Keep space between multiple middle names">Middle name:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="mName" placeholder="Enter middle name">
+                                <input type="text" class="form-control" id="mName" data-toggle="tooltip" title = "Keep space between multiple middle names" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="lName">Last name:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="lName" placeholder="Enter last name">
+                                <input type="text" class="form-control" id="lName" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="yop">Year of publication:</label>
                             <div class="col-sm-4">
-                                <input type="number" class="form-control" id="yop">
+                                <input type="number" class="form-control" id="yop" placeholder="Enter 0 if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="title">Title of article:</label>
+
+                            <label class="control-label col-sm-2" for="title" data-toggle="tooltip" title = "Keep first letter of proper nouns capitalized">Title of article:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="title" placeholder="Enter title of article">
+                                <input type="text" class="form-control" id="title" data-toggle="tooltip" title = "Keep first letter of proper nouns capitalized" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="journalTitle">Journal title:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="journalTitle" placeholder="Enter Journal title">
+                                <input type="text" class="form-control" id="journalTitle" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
@@ -90,53 +102,36 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="volume">Volume number:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="volume" placeholder="Enter volume number">
+                                <input type="text" class="form-control" id="volume" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="issue">Issue number:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="issue" placeholder="Enter issue number">
+                                <input type="text" class="form-control" id="issue" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="page">Page number:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="page" placeholder="Enter page number">
+                                <input type="text" class="form-control" id="page" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="choice">Choose one</label>
+                            <label class="control-label col-sm-2" for="doiTF" id="doiLBL">doi/Permalink:</label>
                             <div class="col-sm-4">
-                                <label class="radio-inline active">    
-                                    <input type="radio" id="male" name="choice" value="doi" checked="">doi</label>
-                                <label class="radio-inline">
-                                    <input type="radio" id="female" value="permalink" name="choice">permalink</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="name">doi:</label>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" id="email" placeholder="Enter doi">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="pwd">Permalink:</label>
-                            <div class="col-sm-4">          
-                                <input type="text" class="form-control" id="pwd" placeholder="Enter permalink">
+                                <input type="text" class="form-control" id="doiTF" placeholder="Enter N/A if not available">
                             </div>
                         </div>
 
                         <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" id="submitBTN" class="btn btn-default">Submit</button>
+                                <button type="button" id="submitBTN" class="btn btn-default"  data-target="#myModal">Submit</button>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="citation">Cited text:</label>
                             <div class="col-sm-4">          
